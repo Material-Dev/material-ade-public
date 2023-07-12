@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def StringTransformer(x):
 
@@ -13,3 +14,6 @@ def StringTransformer(x):
         s.append(q)
 
     return np.array(s)
+
+def StringTransformer2(X):
+    return pd.DataFrame(X).astype(str)
