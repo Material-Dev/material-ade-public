@@ -16,4 +16,4 @@ def StringTransformer(x):
     return np.array(s)
 
 def StringTransformer2(X):
-    return pd.DataFrame(X).astype(str)
+    return pd.DataFrame(X).astype('float64').astype(str)
