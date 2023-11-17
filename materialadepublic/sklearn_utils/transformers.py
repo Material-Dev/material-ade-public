@@ -16,4 +16,12 @@ def StringTransformer(x):
     return np.array(s)
 
 def StringTransformer2(X):
-    return pd.DataFrame(X).astype('float64').astype(str)
+    X_transformed = pd.DataFrame()
+
+    for column in X.columns:
+        if np.issubdtype(X[column].dtype, np.number):
+            X_transformed[column] = X[column].astype('float64').astype(str)
+        else:
+            X_transformed[column] = X[column].astype(str)
+
+    return X_transformed
